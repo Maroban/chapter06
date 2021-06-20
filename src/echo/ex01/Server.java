@@ -18,13 +18,13 @@ public class Server {
 		ServerSocket serverSocket = new ServerSocket(); // 1번 ServerSocket 생성
 
 		// bind(new InetSocketAddress)를 통해 ip주소와 포트 번호를 넣어야 한다.
-		serverSocket.bind(new InetSocketAddress("192.168.0.126", 10001)); // 2번 연결 요청을 기다리고 있다.
+		serverSocket.bind(new InetSocketAddress("211.177.56.195", 10001)); // 2번 연결 요청을 기다리고 있다.
 
 		System.out.println("<서버 시작>");
 		System.out.println("====================================");
 		System.out.println("[연결을 기다리고 있습니다.]");
 
-		// 5번(accept) 2번에서 연결 요청 확인이 되면 연결 요청이 오면 작동한다.
+		// 5번(accept) 2번에서 연결 요청 확인이 되면 작동한다.
 		Socket socket = serverSocket.accept();
 		// 6번(Socket) accept()을 이용해서 Socket socket을 만든다.
 
@@ -39,10 +39,6 @@ public class Server {
 		OutputStream os = socket.getOutputStream();
 		OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
 		BufferedWriter bw = new BufferedWriter(osw);
-
-		// 메세지 받기
-		String text = br.readLine();
-		System.out.println("받은 메세지: " + text);
 
 		// 1:1 채팅 메신저처럼 메세지 받기(반복문 사용)
 		while (true) {

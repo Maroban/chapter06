@@ -21,7 +21,7 @@ public class Client {
 		System.out.println("====================================");
 
 		System.out.println("[서버에 연결을 요청합니다.]");
-		socket.connect(new InetSocketAddress("192.168.0.126", 10001)); // ip주소와 포트번호를 받고 세팅
+		socket.connect(new InetSocketAddress("211.177.56.195", 10001)); // ip주소와 포트번호를 받고 세팅
 
 		System.out.println("[서버에 연결되었습니다.]");
 		
@@ -50,14 +50,6 @@ public class Client {
 		InputStream is = socket.getInputStream();
 		InputStreamReader isr = new InputStreamReader(is, "UTF-8");
 		BufferedReader br = new BufferedReader(isr);
-
-		// 메세지 보내기
-		String str = "안녕";
-
-		// 보내기
-		bw.write(str);
-		bw.newLine();
-		bw.flush();
 
 		// 1:1 채팅 메신저처럼 메세지 보내기(반복문 사용)
 		while (true) {
